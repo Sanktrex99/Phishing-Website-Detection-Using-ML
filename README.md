@@ -1,0 +1,2 @@
+# Phishing-Website-Detection-Using-ML
+We propose an approach to set the parameters with boundary setting  for a functional neural network model for the phishing website identification model. Under  this methodology, the algorithm chooses a characteristic set appropriate for identifying  phishing sites. Then, the neural network trains the chosen feature set to build an ideal  classifier to characterize &amp; detect phishing websites.
