@@ -5,13 +5,13 @@ We propose an approach to set the parameters with boundary setting  for a functi
 Here we use the “TDLHBA (Tuning Deep Learning using Bat/Hybrid Bat Algorithm)” hyperparameter settings to determine the training loss and accuracy on the dataset.
 To evaluate the effectiveness of our suggested model, two different approaches were assessed. 
 
-### Approach 1 
+#### Approach 1 
 Randomly Tuned Neural Network was utilized from the UCI phishing dataset  that has 11055 cases, with 55.7% genuine URLs and 44.3% phishing URLs. In the meantime, 70% of the total instances are utilized to train the neural network's classifier, with the leftover 30% being utilized for testing.
 
-### Approach 2 
+#### Approach 2 
 TDLHBA Hyperparameter Settings was utilized to check the increase in efficiency using tuned hyperparameters. This approach is based on the same dataset used  previously.
 
-## Implementation
+# **Implementation**
 
 A neural network is a notable **supervised learning** strategy. They have solid indeterminate mapping abilities and can hypothetically fit unpredictable functions. 
 The customary neural network model can be summed up into 3 layers:
@@ -31,7 +31,9 @@ During the testing phase, the extraction of features and selection algorithms el
 
 Step 1. 
 To produce an ideal feature collection for the training sample, phishing site feature extrication & optimization are performed. After playing out the cycle, the limit of FVV (Feature Validity Value) is set to 0.096 by taking out 8 features. We cut the dataset, passing on just 23 optimal features to participate in the optimization of the neural network model. 
-The FVV is defined as 
+
+The FVV is defined as
+
   ``` 𝐹𝑉𝑉 = 𝑁𝑢𝑚(𝑝𝑜𝑠𝑖𝑡𝑖𝑣𝑒)+𝑁𝑢𝑚(𝑛𝑒𝑔𝑎𝑡𝑖𝑣𝑒) / 𝑚 ```
 
 Step 2. 
@@ -67,6 +69,6 @@ Algorithm:
 ```
 Step 4. We added the weight & activation variables to the neural network at this stage. Then, at that point, the vector sets of the extracted features were shipped off the prepared neural network classifier to get the phishing sites' identification values. The input parameters are typically handled by a reLU function for each layer. To get the operations to result for a layer, multiply the weighted matrix (𝜔) by the previous layer's result and add bias (b). The classifier's output (Y) is generated once the final layer is handled. If Y is less than 0.5, the program will yield -1 and record this URL as a fraudulent URL, as seen in the above computation. Regardless, the method computes 1 and stamps it as a valid URL.
 
-## Summary
+# **Summary**
 We have suggested a functional phishing website detection model in this paper, which is profoundly accurate. We used FVV (Feature Validity Value) to overview the impact of features appropriate to phishing website identification in this work. Our proposed model has a good ability for autonomous learning because it employs the neural network technique. This algorithm is capable of dealing with issues such as a large number of phishing sensitivity features and feature changes over time and also this can help to mitigate the neural network classifier's overfitting problem. Because the sensitivity of feature phishing websites is always 
 changing, additional features will be required in the future to accomplish this model. As a next step, you can wrap the final model as a REST API endpoint and use it along with a webpage.
