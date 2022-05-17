@@ -13,16 +13,16 @@ TDLHBA Hyperparameter Settings was utilized to check the increase in efficiency 
 
 ## Implementation
 
-A neural network is a notable “supervised learning” strategy. They have solid indeterminate mapping abilities and can hypothetically fit unpredictable functions. 
+A neural network is a notable ** supervised learning ** strategy. They have solid indeterminate mapping abilities and can hypothetically fit unpredictable functions. 
 The customary neural network model can be summed up into 3 layers:
-● input layer 
-● activation method
-● output layer
+  - input layer 
+  - activation method
+  - output layer
 The ongoing gradient drop computation modifies the settings of every level of the neural unit until the inaccuracy is restricted in the backpropagation process.
 The usage of a neural network can overcome the over-fitting issue for multi-feature characterization concerns in phishing site identification. The neural network system has high accuracy in detecting phishing assaults due to its dynamic learning and speculation abilities.
 The whole detection process is isolated into two sections:
-● the training part
-● and the testing part
+  - the training part
+  - and the testing part
 The feature extraction and feature selection algorithms build an effective feature set from the database during the training phase. The neural network is then used to learn the best features. We can acquire an effective neural network classifier for detecting phishing sites by varying the number of neural network layers and not showing the number of units and the learning rate during the training cycle.
 
 During the testing phase, the extraction of features and selection algorithms eliminate the URLs' corresponding ideal feature set. Then, to achieve the phishing site detection results, these features are fed into the classifier.
@@ -36,9 +36,19 @@ To acquire the ideal neural network model for identifying phishing sites, we con
 maximum of 97%. Along these lines, our neural network model is implemented as a three-layered completely associated network with a blend of activation techniques of 'Sigmoid' and 'reLU'. By doing this, our model has a sum of 1406 (23×40+20×23+1×23+3×1=1406) weights and 3 biases.
 
 Step 3. The extraction of features and selection interface are used to collect 23 useful attributes to distinguish phishing URLs. Then, at that point, for every URL, we can get a 23-layered effective feature vector [x1, x2, …, x23].
-Input: “Fv: feature vector set; 𝜔: weights of NN model; b: bias of NN model; L: number of layers in the neural network.”
-Output: “Y: phishing classification result.”
+Input:
+```
+  Fv: feature vector set; 
+  𝜔: weights of NN model; 
+  b: bias of NN model; 
+  L: number of layers in the neural network.
+```
+Output:
+```
+  Y: phishing classification result.
+```
 Algorithm: 
+```
   NN model ← LoadWeightsBias(𝜔,b); 
   𝑝𝑟𝑒𝑑𝑖𝑐𝑡𝑖𝑜𝑛[0] ← 𝐹𝑣; 
   for i = 1, ..., L do 
@@ -49,7 +59,7 @@ Algorithm:
   return -1 //It is a phishing URL; 
   else 
   return 1 //It is a legal URL.
-
+```
 Step 4. We added the weight & activation variables to the neural network at this stage. Then, at that point, the vector sets of the extracted features were shipped off the prepared neural network classifier to get the phishing sites' identification values. The input parameters are typically handled by a reLU function for each layer. To get the operations to result for a layer, multiply the weighted matrix (𝜔) by the previous layer's result and add bias (b). The classifier's output (Y) is generated once the final layer is handled. If Y is less than 0.5, the program will yield -1 and record this URL as a fraudulent URL, as seen in the above computation. Regardless, the method computes 1 and stamps it as a valid URL.
 
 ## Summary
