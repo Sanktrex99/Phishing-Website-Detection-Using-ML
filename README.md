@@ -1,4 +1,4 @@
-# Phishing-Website-Detection-Using-ML
+# **Phishing-Website-Detection-Using-ML**
 We propose an approach to set the parameters with boundary setting  for a functional neural network model for the phishing website identification model. Under  this methodology, the algorithm chooses a characteristic set appropriate for identifying  phishing sites. Then, the neural network trains the chosen feature set to build an ideal  classifier to characterize &amp; detect phishing websites.
 
 ## TDLHBA (Tuning Deep Learning using Bat/Hybrid Bat Algorithm)
@@ -13,29 +13,34 @@ TDLHBA Hyperparameter Settings was utilized to check the increase in efficiency 
 
 ## Implementation
 
-A neural network is a notable ** supervised learning ** strategy. They have solid indeterminate mapping abilities and can hypothetically fit unpredictable functions. 
+A neural network is a notable **supervised learning** strategy. They have solid indeterminate mapping abilities and can hypothetically fit unpredictable functions. 
 The customary neural network model can be summed up into 3 layers:
   - input layer 
   - activation method
   - output layer
+
 The ongoing gradient drop computation modifies the settings of every level of the neural unit until the inaccuracy is restricted in the backpropagation process.
 The usage of a neural network can overcome the over-fitting issue for multi-feature characterization concerns in phishing site identification. The neural network system has high accuracy in detecting phishing assaults due to its dynamic learning and speculation abilities.
 The whole detection process is isolated into two sections:
   - the training part
   - and the testing part
+
 The feature extraction and feature selection algorithms build an effective feature set from the database during the training phase. The neural network is then used to learn the best features. We can acquire an effective neural network classifier for detecting phishing sites by varying the number of neural network layers and not showing the number of units and the learning rate during the training cycle.
 
 During the testing phase, the extraction of features and selection algorithms eliminate the URLs' corresponding ideal feature set. Then, to achieve the phishing site detection results, these features are fed into the classifier.
 
-Step 1. To produce an ideal feature collection for the training sample, phishing site feature extrication & optimization are performed. After playing out the cycle, the limit of FVV (Feature Validity Value) is set to 0.096 by taking out 8 features. We cut the dataset, passing on just 23 optimal features to participate in the optimization of the neural network model. 
+Step 1. 
+To produce an ideal feature collection for the training sample, phishing site feature extrication & optimization are performed. After playing out the cycle, the limit of FVV (Feature Validity Value) is set to 0.096 by taking out 8 features. We cut the dataset, passing on just 23 optimal features to participate in the optimization of the neural network model. 
 The FVV is defined as 
-𝐹𝑉𝑉 = 𝑁𝑢𝑚(𝑝𝑜𝑠𝑖𝑡𝑖𝑣𝑒)+𝑁𝑢𝑚(𝑛𝑒𝑔𝑎𝑡𝑖𝑣𝑒) / 𝑚
+  ``` 𝐹𝑉𝑉 = 𝑁𝑢𝑚(𝑝𝑜𝑠𝑖𝑡𝑖𝑣𝑒)+𝑁𝑢𝑚(𝑛𝑒𝑔𝑎𝑡𝑖𝑣𝑒) / 𝑚 ```
 
-Step 2. Here we train a “neural network classifier” reasonable for identifying phishing sites. The ideal neural network model is acquired by changing configurations like the number of layers, the activation method, and the learning rate.
+Step 2. 
+Here we train a “neural network classifier” reasonable for identifying phishing sites. The ideal neural network model is acquired by changing configurations like the number of layers, the activation method, and the learning rate.
 To acquire the ideal neural network model for identifying phishing sites, we contrasted the performances of 6 models with various layers of error. It very well may be seen from Fig.8 that the classification accuracy is ideal when the classification accuracy is three layers. Besides, the classification accuracy arrives at a 
 maximum of 97%. Along these lines, our neural network model is implemented as a three-layered completely associated network with a blend of activation techniques of 'Sigmoid' and 'reLU'. By doing this, our model has a sum of 1406 (23×40+20×23+1×23+3×1=1406) weights and 3 biases.
 
-Step 3. The extraction of features and selection interface are used to collect 23 useful attributes to distinguish phishing URLs. Then, at that point, for every URL, we can get a 23-layered effective feature vector [x1, x2, …, x23].
+Step 3. 
+The extraction of features and selection interface are used to collect 23 useful attributes to distinguish phishing URLs. Then, at that point, for every URL, we can get a 23-layered effective feature vector [x1, x2, …, x23].
 Input:
 ```
   Fv: feature vector set; 
